@@ -24,3 +24,5 @@ As the conference is not that big (yet) it held a really nice and cozy atmospher
 To summarize: Meeting great people at a great cozy conference in a great city :)
 
 Over and out
+
+*Ola*
