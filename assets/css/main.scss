@@ -38,10 +38,7 @@ a {
 	text-decoration: none;
   }
 }
-blockquote {
-	border-left: 5px solid #eee;
-	padding-left: 1.2em;
-}
+
 ul {
 	list-style: none;
 	li {
@@ -167,6 +164,14 @@ ul {
 			&:hover {
 				background-color: $color-grey;
 				text-decoration: none;
+			}
+		}
+		blockquote {
+			border-left: 5px solid #696969;
+			padding-left: 1.2em;
+		  p {
+				font-family: serif;
+				margin-bottom: 10px;
 			}
 		}
 		strong {

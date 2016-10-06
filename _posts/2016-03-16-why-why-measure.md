@@ -55,4 +55,4 @@ This should also be your reaction chain when you do technical tasks, refactoring
 The why-measure is really really simple, yet often overlooked. This is something that I believe is important on a cultural level of a company; it should be in the backbone of the company as a whole.
 
 
-Do you agree with me or not? Did  I miss something? Send me a tweet at @olbpetersson :)
+Do you agree with me or not? Did  I miss something? Send me a tweet at [@olbpetersson](http://twitter.com/olbpetersson) :)
