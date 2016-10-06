@@ -160,14 +160,13 @@ ul {
 		}
 		a {
 			padding-bottom: 1px;
-			border-bottom: 1px solid $color-link;
 			&:hover {
-				background-color: $color-grey;
+				background-color: $color-light-grey;
 				text-decoration: none;
 			}
 		}
 		blockquote {
-			border-left: 5px solid #696969;
+			border-left: 5px solid $color-grey;
 			padding-left: 1.2em;
 		  p {
 				font-family: serif;
@@ -211,7 +210,9 @@ ul {
 			padding: 3px;
 			font-size: 0.9em;
 			border-radius: 3px;
-			background: $color-grey;
+			font-family: "Inconsolata";
+			background: $color-dark-grey;
+			color: $color-code;
 		}
 		.highlight {
 			margin: 10px;
@@ -219,9 +220,10 @@ ul {
 			padding: 10px;
 			line-height: 1.5;
 			border-radius: 3px;
-			background: $color-black;
+			background: $color-dark-grey;
 			overfolow-x: scroll;
 			code {
+				font-size: 1em;
 				color: $color-code;
 				background: none;
 			}
