@@ -8,7 +8,7 @@ Software Engineer. Java Nerd. Conference Speaker.
 Hi, my name is Ola Petersson. I'm a Software Engineer. I solve peoples problem with software. When I'm not doing that I like to contribute to the community through different events and meetups. I'm mainly a Java developer but also spend time building fullstack solutions.
 
 
-You'll find me at twitter as [@olbpetersson](http://twitter.com/olbpetersson)
+You'll find me at twitter as [@gotoOla](http://twitter.com/gotoOla)
 
 
 # Events and talks
