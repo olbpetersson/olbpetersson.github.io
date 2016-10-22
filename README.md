@@ -1,5 +1,7 @@
-# getmicah.github.io
-My blog made with [jekyll](http://jekyllrb.com) and hosted with Github Pages.
+# The source for olapetersson.se
+
+# This is a fork from getmicah.github.io
+Blog made with [jekyll](http://jekyllrb.com) and hosted with Github Pages.
 Template that is used: getmicah.github.io
 
 ### License
