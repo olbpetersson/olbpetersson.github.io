@@ -3,6 +3,8 @@ layout: post
 title: Automating with Ansible - Part 1
 ---
 
+*Update 20161031*: Changed compose-file to include container names
+
 Automating tasks for installing new machines or managing your different environments is a must in the days of
 Continous Delivery. Most often I have seen these solutions done by chef or puppet. When I've worked in those projects
 many of the tasks/recipes has already been setup and whenever I've gone in and update those I've felt that it's a bit of
@@ -21,7 +23,7 @@ a delivery pipeline you would have to automate those preqrequired steps so that 
 
 ## How does it work?
 
-Ansible uses a control-machine, a machine were you've installed ansible to run your tasks towards all your target-hosts (e.g. production, test etc).
+Ansible uses a control-machine, a machine where you've installed ansible to run your tasks towards all your target-hosts (e.g. production, test etc).
 When Ansible executes, it utilizes SSH towards the client to perform its tasks.
 
 
@@ -37,8 +39,8 @@ If you want to try it out in a sandboxed environment I've prepared a few docker 
 ## Start the system
 
 From the top of the repository, perform <code>docker-compose up</code>. This will spin up a system containg of:
- * An ansible controller - this is were we will perform our provisioning
- * A dummy node - will be the target were we will execute our commands against
+ * An ansible controller - this is where we will perform our provisioning
+ * A dummy node - will be the target where we will execute our commands against
  * Another dummy node - same as above
 
 
@@ -49,23 +51,23 @@ version: '2'
 services:
   controller:
     build: docker/ansible_controller
-    links:
-      - node1
-      - node2
+    container_name: a_controller
     tty: true
     volumes:
       - ./work:/home/
   node1:
     build: docker/ansible_target
+    container_name: a_node
     tty: true
   node2:
     build: docker/ansible_target
+    container_name: another_node
     tty: true
 ~~~
 
 ## Check the connection to your targets
 
-To make sure that everything is correctly setup, execute <code>docker exec -ti ansibleminimalexample_controller_1 bash</code>. Now you should be in bash within the container
+To make sure that everything is correctly setup, execute <code>docker exec -ti a_controller bash</code>. Now you should be in bash within the container
 of the ansible controller.
 
 
@@ -78,7 +80,7 @@ Ansible comes with a lot of predefined modules which can help you with performin
 <http://docs.ansible.com/ansible/modules_by_category.html>.
 
 ## Defining our hosts
-Ansible is working with an inventory file. This is a configuration file were we define our "machine-groups". A "machine-group"
+Ansible is working with an inventory file. This is a configuration file where we define our "machine-groups". A "machine-group"
  could for example be all our databases. We could define these in the group [Databases] with the host names of our databases listed.
 
 
@@ -102,6 +104,6 @@ controller ansible_connection=local
 If we look back on the *ping*-command we used above, we could now send in the host name as *nodes* (instead of all) to only ping the nodes-group, or *node1* to only ping the node1 machine etc.
 
 
-**This was the first part** in Ansible were we tried out Ansibles modules and inventory-file to define our system and ping different machines in our system. In an upcoming post we will examine how we can perform more ellaborate tasks using Ansibles Playbook concept.
+**This was the first part** in Ansible where we tried out Ansibles modules and inventory-file to define our system and ping different machines in our system. In an upcoming post we will examine how we can perform more ellaborate tasks using Ansibles Playbook concept.
 
 
